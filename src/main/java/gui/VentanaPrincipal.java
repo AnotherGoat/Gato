@@ -70,7 +70,10 @@ public class VentanaPrincipal extends JFrame {
         if(resultado){
             String ganador = juego.getJugadorActual().getNombre();
             JOptionPane.showMessageDialog(this, "¡Ha ganado "+ganador+"!");
+        } else if(juego.isEmpate()){
+            JOptionPane.showMessageDialog(this, "¡Ha ocurrido un empate!");
         } else {
+
             juego.avanzarTurno();
 
             panel.remove(panelInfo);                            // Quita el panel con la información

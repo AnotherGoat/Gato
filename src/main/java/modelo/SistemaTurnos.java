@@ -31,6 +31,10 @@ public class SistemaTurnos {
         return orden[posicionActual];
     }
 
+    public int getNumero() {
+        return numero;
+    }
+
     /* toString */
     @Override
     public String toString() {

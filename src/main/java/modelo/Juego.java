@@ -7,6 +7,7 @@ public class Juego {
     private Jugador[] jugadores;
     private SistemaTurnos sistemaTurnos;
     private boolean terminado;
+    private boolean empate;
     private Jugador ganador;
 
     /* Constructor */
@@ -28,7 +29,19 @@ public class Juego {
     }
 
     public boolean buscarGanador() {
-        return tablero.buscarLineas(getSimboloActual());
+        boolean resultado = tablero.buscarLineas(getSimboloActual());
+
+        if(resultado) {                                         // Registra que ha terminado el juego
+            terminado = true;                                   // Y revisa si ocurrió un empate
+            empate = false;
+        } else {
+            if (sistemaTurnos.getNumero() == 9){
+                terminado = true;
+                empate = true;
+            }
+        }
+
+        return resultado;
     }
 
     /* Getters */
@@ -54,6 +67,10 @@ public class Juego {
 
     public EstadoCasilla getSimboloActual() {
         return getJugadorActual().getSimbolo();
+    }
+
+    public boolean isEmpate() {
+        return empate;
     }
 
     /* toString */
