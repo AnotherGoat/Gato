@@ -11,19 +11,24 @@ public class Casilla {
 
     /* Constructores */
     public Casilla() {
-        estado = EstadoCasilla.VACIO;
-        caracter = '-';
+        setEstado(EstadoCasilla.VACIO);         // Una casilla inicia siempre vacía
     }
 
     /* Métodos */
 
-    /* Setters y Getters */
+    /* Getters */
+    public char getCaracter() {
+        return caracter;
+    }
+
+    /* Setters */
     public void setEstado(EstadoCasilla estado) {
         this.estado = estado;
 
-    }
-
-    public char getCaracter() {
-        return caracter;
+        switch(estado) {                        // Dependiendo del estado, se elige el carácter de la casilla
+            case VACIO -> caracter = '-';
+            case CRUZ -> caracter = 'X';
+            case CIRCULO -> caracter = 'O';
+        }
     }
 }

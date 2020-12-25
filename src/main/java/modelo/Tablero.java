@@ -6,18 +6,16 @@ package modelo;
 public class Tablero {
 
     /* Atributos */
-    private Casilla[][] casillas;
+    private Casilla[] casillas;
 
     /* Constructores */
     public Tablero() {
         // Inicializar tablero de 3x3
-        casillas = new Casilla[3][3];
+        casillas = new Casilla[9];
 
-        // Inicializar casillas
-        for(int i=0; i<3; i++) {                    // Cada fila
-            for(int j=0; j<3; j++) {                // Tendrá 3 casillas
-                casillas[i][j] = new Casilla();     // Empiezan vacías
-            }
+        // Inicializa todas las casillas del tablero
+        for (int i = 0; i < casillas.length; i++) {
+            casillas[i] = new Casilla();
         }
 
         mostrarTablero();
@@ -26,13 +24,15 @@ public class Tablero {
     /* Métodos */
     private void mostrarTablero() {
 
-        for(Casilla[] fila : casillas){
-            for(Casilla c: fila){
-                System.out.print(c.getCaracter());
-            }
-            System.out.println();
-        }
+        for (int i = 0; i < casillas.length; i++) {
 
+            if (i > 0 && i % 3 == 0) {              // Después de la primera fila
+                System.out.println();               // Separa cada fila que le sigue con un salto de linea
+            }
+
+            Casilla c = casillas[i];
+            System.out.print(c.getCaracter());
+        }
     }
 
 }

@@ -18,10 +18,12 @@ public class Jugador {
     }
 
     /* Métodos */
-    private void llenarCasilla(int posicionX, int posicionY, Tablero tablero) {
-
-
+    private void llenarCasilla(int posicion, Tablero tablero) {
 
     }
 
+    /* Getters */
+    public String getNombre() {
+        return nombre;
+    }
 }
