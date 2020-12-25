@@ -25,7 +25,6 @@ public class Juego {
     /* Métodos */
     public void avanzarTurno() {
         sistemaTurnos.avanzar();
-
     }
 
     /* Getters */
@@ -58,6 +57,5 @@ public class Juego {
     public String toString() {
         return jugadores[0].getNombre()+" vs. "+jugadores[1].getNombre();
     }
-
 
 }

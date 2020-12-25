@@ -4,6 +4,7 @@ import modelo.Juego;
 import modelo.SistemaTurnos;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 
 import static javax.swing.SwingConstants.CENTER;
@@ -14,6 +15,7 @@ public class VentanaPrincipal extends JFrame {
     /* Atributos */
     JPanel panel;
     PanelTablero tablero;
+    JPanel panelInfo;
     JLabel labelJugadores;
     JLabel labelTurno;
 
@@ -37,10 +39,11 @@ public class VentanaPrincipal extends JFrame {
 
     private void inicializarComponentes() {
 
-        panel = new JPanel();
-        panel.setLayout(new BorderLayout());
+        panel = new JPanel(new BorderLayout());
 
         tablero = new PanelTablero(juego.getTablero());
+
+        panelInfo = new JPanel(new BorderLayout());
 
         labelJugadores = new JLabel(juego.toString());
         labelJugadores.setHorizontalAlignment(CENTER);
@@ -51,21 +54,28 @@ public class VentanaPrincipal extends JFrame {
 
     private void ubicarComponentes() {
 
+        panelInfo.add(labelJugadores, BorderLayout.NORTH);
+        panelInfo.add(labelTurno, BorderLayout.SOUTH);
+
         panel.add(tablero, BorderLayout.CENTER);
-        panel.add(labelJugadores, BorderLayout.NORTH);
-        panel.add(labelTurno, BorderLayout.SOUTH);
+        panel.add(panelInfo, BorderLayout.NORTH);
 
         add(panel, BorderLayout.CENTER);
-
     }
 
     /* Métodos */
     public void avanzarTurno() {
         juego.avanzarTurno();
 
-        panel.remove(labelTurno);
-        labelTurno = new JLabel(juego.getTurno());
+        panel.remove(panelInfo);                            // Quita el panel con la información
+
+        labelTurno = new JLabel(juego.getTurno());          // Para actualizar el texto que tiene
         labelTurno.setHorizontalAlignment(CENTER);
-        panel.add(labelTurno, BorderLayout.SOUTH);
+
+        panelInfo = new JPanel(new BorderLayout());
+        panelInfo.add(labelJugadores, BorderLayout.NORTH);
+        panelInfo.add(labelTurno, BorderLayout.SOUTH);
+
+        panel.add(panelInfo, BorderLayout.NORTH);           // Y lo vuelve a añadir con el texto nuevo
     }
 }
