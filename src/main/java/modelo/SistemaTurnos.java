@@ -26,6 +26,11 @@ public class SistemaTurnos {
         }
     }
 
+    /* Getters */
+    public Jugador getJugadorActual() {
+        return orden[posicionActual];
+    }
+
     /* toString */
     @Override
     public String toString() {

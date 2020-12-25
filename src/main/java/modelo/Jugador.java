@@ -37,4 +37,8 @@ public class Jugador {
     public String getNombre() {
         return nombre;
     }
+
+    public EstadoCasilla getFigura() {
+        return figura;
+    }
 }

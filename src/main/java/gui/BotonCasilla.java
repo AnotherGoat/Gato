@@ -25,11 +25,13 @@ public class BotonCasilla extends JButton implements ActionListener {
         setHorizontalAlignment(CENTER);
         setVerticalAlignment(CENTER);
 
-        cambiarEstado();
+        actualizarEstado();
+
+        addActionListener(this);
     }
 
     /* Métodos */
-    public void cambiarEstado(){
+    public void actualizarEstado(){
         switch (casilla.getEstado()) {          // Dependiendo del estado, se elige el diseño de la casilla
             case VACIO -> {
                 setForeground(Color.WHITE);
@@ -44,32 +46,17 @@ public class BotonCasilla extends JButton implements ActionListener {
                 setText("O");
             }
         }
-
-        addActionListener(this);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this) {
-            switch (casilla.getEstado()) {          // Dependiendo del estado, se cambia el diseño de la casilla
-                case VACIO -> {
-                    setForeground(Color.RED);
-                    setText("X");
-                    casilla.setEstado(EstadoCasilla.CRUZ);
-                }
-                case CRUZ -> {
-                    setForeground(Color.BLUE);
-                    setText("O");
-                    casilla.setEstado(EstadoCasilla.CIRCULO);
-                }
-                case CIRCULO -> {
-                    setForeground(Color.WHITE);
-                    setText("");
-                    casilla.setEstado(EstadoCasilla.VACIO);
-                }
-            }
 
-            vp.avanzarTurno();
+            if(casilla.getEstado() == EstadoCasilla.VACIO) {
+                casilla.setEstado(vp.sistemaTurnos.getJugadorActual().getFigura());
+                actualizarEstado();
+                vp.avanzarTurno();
+            }
         }
     }
 }
