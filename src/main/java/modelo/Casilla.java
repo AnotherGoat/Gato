@@ -7,7 +7,7 @@ public class Casilla {
 
     /* Atributos */
     private EstadoCasilla estado;
-    private char caracter;
+    private char simbolo;
 
     /* Constructores */
     public Casilla() {
@@ -17,8 +17,8 @@ public class Casilla {
     /* Métodos */
 
     /* Getters */
-    public char getCaracter() {
-        return caracter;
+    public char getSimbolo() {
+        return simbolo;
     }
 
     public EstadoCasilla getEstado() {
@@ -30,9 +30,9 @@ public class Casilla {
         this.estado = estado;
 
         switch(estado) {                        // Dependiendo del estado, se elige el carácter de la casilla
-            case VACIO -> caracter = '-';
-            case CRUZ -> caracter = 'X';
-            case CIRCULO -> caracter = 'O';
+            case VACIO -> simbolo = '-';
+            case CRUZ -> simbolo = 'X';
+            case CIRCULO -> simbolo = 'O';
         }
     }
 }

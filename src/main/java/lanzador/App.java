@@ -1,6 +1,6 @@
 package lanzador;
 
-import modelo.Juego;
+import gui.VentanaPrincipal;
 
 /**
  * Clase que contiene el método main
@@ -8,7 +8,7 @@ import modelo.Juego;
 public class App {
 
     public static void main(String[] args) {
-        new Juego();
+        new VentanaPrincipal();
     }
 
 }

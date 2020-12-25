@@ -35,7 +35,7 @@ public class Tablero {
             }
 
             Casilla c = casillas[i];
-            System.out.print(c.getCaracter());
+            System.out.print(c.getSimbolo());
         }
     }
 
