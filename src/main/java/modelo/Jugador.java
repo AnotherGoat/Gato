@@ -18,8 +18,19 @@ public class Jugador {
     }
 
     /* Métodos */
-    private void llenarCasilla(int posicion, Tablero tablero) {
+    public void llenarCasilla(int posicion, Tablero tablero) {
 
+        if (posicion < 0 || posicion > 8) {
+            System.out.println("Posición fuera del rango");
+        } else {
+
+            Casilla casillaObjetivo = tablero.getCasillas()[posicion];
+            if (casillaObjetivo.getEstado() != EstadoCasilla.VACIO) {
+                System.out.println("La casilla ya está llena");
+            } else {
+                casillaObjetivo.setEstado(figura);
+            }
+        }
     }
 
     /* Getters */

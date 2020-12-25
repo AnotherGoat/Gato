@@ -21,6 +21,10 @@ public class Casilla {
         return caracter;
     }
 
+    public EstadoCasilla getEstado() {
+        return estado;
+    }
+
     /* Setters */
     public void setEstado(EstadoCasilla estado) {
         this.estado = estado;

@@ -22,7 +22,7 @@ public class Tablero {
     }
 
     /* Métodos */
-    private void mostrarTablero() {
+    public void mostrarTablero() {
 
         for (int i = 0; i < casillas.length; i++) {
 
@@ -35,4 +35,9 @@ public class Tablero {
         }
     }
 
+    /* Getters */
+
+    public Casilla[] getCasillas() {
+        return casillas;
+    }
 }
