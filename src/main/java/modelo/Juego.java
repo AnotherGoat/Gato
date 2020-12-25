@@ -27,6 +27,10 @@ public class Juego {
         sistemaTurnos.avanzar();
     }
 
+    public boolean buscarGanador() {
+        return tablero.buscarLineas(getSimboloActual());
+    }
+
     /* Getters */
     public boolean isTerminado() {
         return terminado;

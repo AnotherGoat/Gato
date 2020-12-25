@@ -65,17 +65,24 @@ public class VentanaPrincipal extends JFrame {
 
     /* Métodos */
     public void avanzarTurno() {
-        juego.avanzarTurno();
+        boolean resultado = juego.buscarGanador();                              // Revisa si hay un ganador
 
-        panel.remove(panelInfo);                            // Quita el panel con la información
+        if(resultado){
+            String ganador = juego.getJugadorActual().getNombre();
+            JOptionPane.showMessageDialog(this, "¡Ha ganado "+ganador+"!");
+        } else {
+            juego.avanzarTurno();
 
-        labelTurno = new JLabel(juego.getTurno());          // Para actualizar el texto que tiene
-        labelTurno.setHorizontalAlignment(CENTER);
+            panel.remove(panelInfo);                            // Quita el panel con la información
 
-        panelInfo = new JPanel(new BorderLayout());
-        panelInfo.add(labelJugadores, BorderLayout.NORTH);
-        panelInfo.add(labelTurno, BorderLayout.SOUTH);
+            labelTurno = new JLabel(juego.getTurno());          // Para actualizar el texto que tiene
+            labelTurno.setHorizontalAlignment(CENTER);
 
-        panel.add(panelInfo, BorderLayout.NORTH);           // Y lo vuelve a añadir con el texto nuevo
+            panelInfo = new JPanel(new BorderLayout());
+            panelInfo.add(labelJugadores, BorderLayout.NORTH);
+            panelInfo.add(labelTurno, BorderLayout.SOUTH);
+
+            panel.add(panelInfo, BorderLayout.NORTH);           // Y lo vuelve a añadir con el texto nuevo
+        }
     }
 }
