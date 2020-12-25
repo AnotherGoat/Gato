@@ -10,10 +10,8 @@ public class Casilla {
 
     /* Constructores */
     public Casilla() {
-        setEstado(EstadoCasilla.CIRCULO);         // Una casilla inicia siempre vacía
+        estado = EstadoCasilla.VACIO;         // Una casilla inicia siempre vacía
     }
-
-    /* Métodos */
 
     /* Getters */
     public EstadoCasilla getEstado() {
