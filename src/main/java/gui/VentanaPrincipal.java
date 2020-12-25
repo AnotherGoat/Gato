@@ -7,22 +7,18 @@ import javax.swing.*;
 import java.awt.*;
 
 import static javax.swing.SwingConstants.CENTER;
+import static lanzador.App.juego;
 
 public class VentanaPrincipal extends JFrame {
 
     /* Atributos */
-    Juego juego;
-    SistemaTurnos sistemaTurnos;
     JPanel panel;
     PanelTablero tablero;
     JLabel labelJugadores;
-    LabelTurno labelTurno;
+    JLabel labelTurno;
 
     /* Constructores */
     public VentanaPrincipal() {
-        juego = new Juego();
-        sistemaTurnos = juego.getSistemaTurnos();
-
         inicializar();
         inicializarComponentes();
         ubicarComponentes();
@@ -49,7 +45,8 @@ public class VentanaPrincipal extends JFrame {
         labelJugadores = new JLabel(juego.toString());
         labelJugadores.setHorizontalAlignment(CENTER);
 
-        labelTurno = new LabelTurno(sistemaTurnos.toString());
+        labelTurno = new JLabel(juego.getTurno());
+        labelTurno.setHorizontalAlignment(CENTER);
     }
 
     private void ubicarComponentes() {
@@ -64,19 +61,10 @@ public class VentanaPrincipal extends JFrame {
 
     /* Métodos */
     public void avanzarTurno() {
-        sistemaTurnos.avanzar();
-
+        juego.avanzarTurno();
+        
         panel.remove(labelTurno);
-        labelTurno = new LabelTurno(sistemaTurnos.toString());
+        labelTurno = new JLabel(juego.getTurno());
         panel.add(labelTurno, BorderLayout.SOUTH);
-    }
-
-    /* Getters */
-    public SistemaTurnos getSistemaTurnos() {
-        return sistemaTurnos;
-    }
-
-    public JLabel getLabelTurno() {
-        return labelTurno;
     }
 }

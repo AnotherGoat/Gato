@@ -22,6 +22,12 @@ public class Juego {
         terminado = false;
     }
 
+    /* Métodos */
+    public void avanzarTurno() {
+        sistemaTurnos.avanzar();
+
+    }
+
     /* Getters */
     public boolean isTerminado() {
         return terminado;
@@ -35,8 +41,8 @@ public class Juego {
         return jugadores;
     }
 
-    public SistemaTurnos getSistemaTurnos() {
-        return sistemaTurnos;
+    public String getTurno() {
+        return sistemaTurnos.toString();
     }
 
     /* toString */
@@ -44,4 +50,6 @@ public class Juego {
     public String toString() {
         return jugadores[0].getNombre()+" vs. "+jugadores[1].getNombre();
     }
+
+
 }
