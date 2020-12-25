@@ -8,6 +8,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import static lanzador.App.vp;
+
 public class BotonCasilla extends JButton implements ActionListener {
 
     /* Atributos */
@@ -66,6 +68,8 @@ public class BotonCasilla extends JButton implements ActionListener {
                     casilla.setEstado(EstadoCasilla.VACIO);
                 }
             }
+
+            vp.avanzarTurno();
         }
     }
 }

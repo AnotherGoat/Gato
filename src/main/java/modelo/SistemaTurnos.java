@@ -22,7 +22,14 @@ public class SistemaTurnos {
     public void avanzar() {
         if (!juego.isTerminado()) {             // Si el juego todavía no termina
             numero++;
-            posicionActual = posicionActual++ % orden.length;
+            posicionActual = (posicionActual+1) % orden.length;
         }
+    }
+
+    /* toString */
+    @Override
+    public String toString() {
+        String nombreActual = orden[posicionActual].getNombre();       // Nombre del jugador actual
+        return "Turno " + numero +": "+nombreActual;
     }
 }

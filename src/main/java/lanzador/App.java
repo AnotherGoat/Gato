@@ -7,8 +7,10 @@ import gui.VentanaPrincipal;
  */
 public class App {
 
+    public static VentanaPrincipal vp;
+
     public static void main(String[] args) {
-        new VentanaPrincipal();
+        vp = new VentanaPrincipal();
     }
 
 }
