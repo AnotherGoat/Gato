@@ -21,26 +21,11 @@ public class Tablero {
         for (int i = 0; i < casillas.length; i++) {
             casillas[i] = new Casilla();
         }
-
-        mostrarTablero();
     }
 
     /* Métodos */
-    public void mostrarTablero() {
-
-        for (int i = 0; i < casillas.length; i++) {
-
-            if (i > 0 && i % 3 == 0) {              // Después de la primera fila
-                System.out.println();               // Separa cada fila que le sigue con un salto de linea
-            }
-
-            Casilla c = casillas[i];
-            System.out.print(c.getSimbolo());
-        }
-    }
 
     /* Getters */
-
     public Casilla[] getCasillas() {
         return casillas;
     }
