@@ -1,6 +1,6 @@
 package lanzador;
 
-import modelo.Tablero;
+import modelo.Juego;
 
 /**
  * Clase que contiene el método main
@@ -8,7 +8,7 @@ import modelo.Tablero;
 public class App {
 
     public static void main(String[] args) {
-        new Tablero();
+        new Juego();
     }
 
 }

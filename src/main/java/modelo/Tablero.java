@@ -7,7 +7,6 @@ public class Tablero {
 
     /* Atributos */
     private Casilla[][] casillas;
-    private Jugador[] jugadores;
 
     /* Constructores */
     public Tablero() {

@@ -6,9 +6,9 @@ package modelo;
 public class Jugador {
 
     /* Atributos */
-    String nombre;
-    EstadoCasilla figura;
-    TipoJugador tipo;
+    private String nombre;
+    private EstadoCasilla figura;
+    private TipoJugador tipo;
 
     /* Constructores */
     public Jugador(String nombre, EstadoCasilla figura, TipoJugador tipo) {
