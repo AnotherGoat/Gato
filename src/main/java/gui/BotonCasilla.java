@@ -8,6 +8,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import static lanzador.App.juego;
 import static lanzador.App.vp;
 
 public class BotonCasilla extends JButton implements ActionListener {
@@ -25,13 +26,13 @@ public class BotonCasilla extends JButton implements ActionListener {
         setHorizontalAlignment(CENTER);
         setVerticalAlignment(CENTER);
 
-        actualizarEstado();
+        actualizarAspecto();
 
         addActionListener(this);
     }
 
     /* Métodos */
-    public void actualizarEstado(){
+    public void actualizarAspecto(){
         switch (casilla.getEstado()) {          // Dependiendo del estado, se elige el diseño de la casilla
             case VACIO -> {
                 setForeground(Color.WHITE);
@@ -53,8 +54,8 @@ public class BotonCasilla extends JButton implements ActionListener {
         if (e.getSource() == this) {
 
             if(casilla.getEstado() == EstadoCasilla.VACIO) {
-                casilla.setEstado(vp.sistemaTurnos.getJugadorActual().getFigura());
-                actualizarEstado();
+                casilla.setEstado(juego.getSimboloActual());
+                actualizarAspecto();
                 vp.avanzarTurno();
             }
         }

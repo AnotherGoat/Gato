@@ -7,13 +7,13 @@ public class Jugador {
 
     /* Atributos */
     private String nombre;
-    private EstadoCasilla figura;
+    private EstadoCasilla simbolo;
     private TipoJugador tipo;
 
     /* Constructores */
-    public Jugador(String nombre, EstadoCasilla figura, TipoJugador tipo) {
+    public Jugador(String nombre, EstadoCasilla simbolo, TipoJugador tipo) {
         this.nombre = nombre;
-        this.figura = figura;
+        this.simbolo = simbolo;
         this.tipo = tipo;
     }
 
@@ -38,7 +38,7 @@ public class Jugador {
         return nombre;
     }
 
-    public EstadoCasilla getFigura() {
-        return figura;
+    public EstadoCasilla getSimbolo() {
+        return simbolo;
     }
 }

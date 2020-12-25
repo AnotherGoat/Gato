@@ -45,6 +45,14 @@ public class Juego {
         return sistemaTurnos.toString();
     }
 
+    public Jugador getJugadorActual() {
+        return sistemaTurnos.getJugadorActual();
+    }
+
+    public EstadoCasilla getSimboloActual() {
+        return getJugadorActual().getSimbolo();
+    }
+
     /* toString */
     @Override
     public String toString() {

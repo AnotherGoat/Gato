@@ -62,7 +62,7 @@ public class VentanaPrincipal extends JFrame {
     /* Métodos */
     public void avanzarTurno() {
         juego.avanzarTurno();
-        
+
         panel.remove(labelTurno);
         labelTurno = new JLabel(juego.getTurno());
         panel.add(labelTurno, BorderLayout.SOUTH);
