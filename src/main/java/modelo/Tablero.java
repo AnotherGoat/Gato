@@ -1,7 +1,11 @@
 package modelo;
 
 /**
- * El tablero es el área de  principal, que se compone de 3x3 = 9 casillas
+ * El tablero es el área de  principal, que se compone de 3x3 = 9 casillas<br>
+ * Los índices de las casillas en un tablero se ven así:<br>
+ * 0  1  2<br>
+ * 3  4  5<br>
+ * 6  7  8
  */
 public class Tablero {
 
