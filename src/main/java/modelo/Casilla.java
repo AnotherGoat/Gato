@@ -1,21 +1,24 @@
 package modelo;
 
+/**
+ * Una casilla es cada sección en la que se divide el tablero y que cada jugador puede llenar
+ */
 public class Casilla {
 
     /* Atributos */
-    private Estado estado;
+    private EstadoCasilla estado;
     private char caracter;
 
     /* Constructores */
     public Casilla() {
-        estado = Estado.VACIO;
+        estado = EstadoCasilla.VACIO;
         caracter = '-';
     }
 
     /* Métodos */
 
     /* Setters y Getters */
-    public void setEstado(Estado estado) {
+    public void setEstado(EstadoCasilla estado) {
         this.estado = estado;
 
     }
