@@ -1,6 +1,6 @@
 package modelo;
 
-public class Turno {
+public class SistemaTurnos {
 
     /* Atributos */
     Juego juego;
@@ -9,7 +9,7 @@ public class Turno {
     int posicionActual;
 
     /* Constructores */
-    public Turno(Juego juego) {
+    public SistemaTurnos(Juego juego) {
         this.juego = juego;
         this.numero = 1;
         this.posicionActual = 0;
