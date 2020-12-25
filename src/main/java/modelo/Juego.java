@@ -27,4 +27,8 @@ public class Juego {
     public Tablero getTablero() {
         return tablero;
     }
+
+    public Jugador[] getJugadores() {
+        return jugadores;
+    }
 }

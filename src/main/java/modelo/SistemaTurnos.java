@@ -11,8 +11,11 @@ public class SistemaTurnos {
     /* Constructores */
     public SistemaTurnos(Juego juego) {
         this.juego = juego;
-        this.numero = 1;
-        this.posicionActual = 0;
+        numero = 1;
+        posicionActual = 0;
+
+        orden = new Jugador[2];
+        orden = juego.getJugadores();
     }
 
     /* Métodos */
@@ -21,10 +24,5 @@ public class SistemaTurnos {
             numero++;
             posicionActual = posicionActual++ % orden.length;
         }
-    }
-
-    /* Setters */
-    public void setOrden(Jugador[] orden) {
-        this.orden = orden;
     }
 }
