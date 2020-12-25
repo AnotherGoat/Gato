@@ -1,6 +1,7 @@
 package gui;
 
 import modelo.Casilla;
+import modelo.EstadoCasilla;
 
 import javax.swing.*;
 import java.awt.*;
@@ -47,9 +48,24 @@ public class BotonCasilla extends JButton implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == this) {
-            setForeground(Color.RED);
-            setText("X");
+        if (e.getSource() == this) {
+            switch (casilla.getEstado()) {          // Dependiendo del estado, se cambia el diseño de la casilla
+                case VACIO -> {
+                    setForeground(Color.RED);
+                    setText("X");
+                    casilla.setEstado(EstadoCasilla.CRUZ);
+                }
+                case CRUZ -> {
+                    setForeground(Color.BLUE);
+                    setText("O");
+                    casilla.setEstado(EstadoCasilla.CIRCULO);
+                }
+                case CIRCULO -> {
+                    setForeground(Color.WHITE);
+                    setText("");
+                    casilla.setEstado(EstadoCasilla.VACIO);
+                }
+            }
         }
     }
 }

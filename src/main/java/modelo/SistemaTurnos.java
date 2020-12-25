@@ -17,7 +17,7 @@ public class SistemaTurnos {
 
     /* Métodos */
     public void avanzar() {
-        if (juego.getEstado() != EstadoJuego.TERMINADO) {
+        if (!juego.isTerminado()) {             // Si el juego todavía no termina
             numero++;
             posicionActual = posicionActual++ % orden.length;
         }

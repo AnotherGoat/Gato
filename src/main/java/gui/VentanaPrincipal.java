@@ -31,7 +31,6 @@ public class VentanaPrincipal extends JFrame {
 
         var tablero = new PanelTablero(juego.getTablero());
 
-
         panel.setLayout(new BorderLayout());
         panel.add(tablero, BorderLayout.CENTER);
         add(panel, BorderLayout.CENTER);
