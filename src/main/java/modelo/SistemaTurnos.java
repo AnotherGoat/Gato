@@ -3,10 +3,10 @@ package modelo;
 public class SistemaTurnos {
 
     /* Atributos */
-    Juego juego;
-    int numero;
-    Jugador[] orden;
-    int posicionActual;
+    private Juego juego;
+    private int numero;
+    private Jugador[] orden;
+    private int posicionActual;
 
     /* Constructores */
     public SistemaTurnos(Juego juego) {

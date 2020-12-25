@@ -65,6 +65,7 @@ public class VentanaPrincipal extends JFrame {
 
         panel.remove(labelTurno);
         labelTurno = new JLabel(juego.getTurno());
+        labelTurno.setHorizontalAlignment(CENTER);
         panel.add(labelTurno, BorderLayout.SOUTH);
     }
 }
