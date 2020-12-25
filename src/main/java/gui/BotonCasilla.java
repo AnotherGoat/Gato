@@ -4,8 +4,10 @@ import modelo.Casilla;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class BotonCasilla extends JButton {
+public class BotonCasilla extends JButton implements ActionListener {
 
     /* Atributos */
     private Casilla casilla;
@@ -38,6 +40,16 @@ public class BotonCasilla extends JButton {
                 setForeground(Color.BLUE);
                 setText("O");
             }
+        }
+
+        addActionListener(this);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if(e.getSource() == this) {
+            setForeground(Color.RED);
+            setText("X");
         }
     }
 }

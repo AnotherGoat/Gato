@@ -5,6 +5,8 @@ import modelo.Tablero;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class PanelTablero extends JPanel {
 
@@ -29,7 +31,7 @@ public class PanelTablero extends JPanel {
     private void inicializar() {
         setLayout(new GridLayout(3,3));
 
-        for(BotonCasilla c : casillas){
+        for(BotonCasilla c : casillas) {
             add(c);
         }
     }
