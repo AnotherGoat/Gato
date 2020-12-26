@@ -6,9 +6,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import static lanzador.App.config;
-import static lanzador.App.juego;
-import static lanzador.App.vp;
+import static lanzador.App.*;
 
 public class PanelConfig extends JPanel {
 

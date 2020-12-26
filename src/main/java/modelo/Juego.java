@@ -1,7 +1,5 @@
 package modelo;
 
-import static lanzador.App.config;
-
 public class Juego {
 
     /* Atributos */

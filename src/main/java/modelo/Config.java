@@ -1,8 +1,5 @@
 package modelo;
 
-import java.util.ArrayList;
-import java.util.Collections;
-
 public class Config {
 
     /* Atributos */

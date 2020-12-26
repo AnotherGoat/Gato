@@ -1,11 +1,8 @@
 package gui;
 
-import modelo.Juego;
-
 import javax.swing.*;
 import java.awt.*;
 
-import static lanzador.App.config;
 import static lanzador.App.juego;
 
 public class VentanaPrincipal extends JFrame {
