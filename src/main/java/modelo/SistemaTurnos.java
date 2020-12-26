@@ -25,17 +25,26 @@ public class SistemaTurnos {
         }
     }
 
-    public Jugador[] ordenarJugadores(Jugador[] jugadores, int[] orden) {
+    private Jugador[] ordenarJugadores(Jugador[] jugadores, int[] orden) {
 
         var ordenNuevo = new Jugador[jugadores.length];
 
         for (int i=0; i<jugadores.length; i++) {
-            for (int o : orden) {
-                ordenNuevo[i] = jugadores[o];
-            }
+            ordenNuevo[i] = jugadores[orden[i]];
         }
 
         return ordenNuevo;
+    }
+
+    public void invertirOrden() {
+
+        var ordenNuevo = new Jugador[orden.length];
+
+        for (int i=0; i<orden.length; i++) {
+            ordenNuevo[i] = orden[orden.length-1-i];
+        }
+
+        orden = ordenNuevo;
     }
 
     /* Getters */

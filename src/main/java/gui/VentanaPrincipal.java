@@ -13,6 +13,7 @@ public class VentanaPrincipal extends JFrame {
     JPanel panelInfo;
     JLabel labelJugadores;
     JLabel labelTurno;
+    PanelConfig panelConfig;
 
     /* Constructores */
     public VentanaPrincipal() {
@@ -45,6 +46,8 @@ public class VentanaPrincipal extends JFrame {
 
         labelTurno = new JLabel(juego.getTurno());
         labelTurno.setHorizontalAlignment(SwingConstants.CENTER);
+
+        panelConfig = new PanelConfig();
     }
 
     private void ubicarComponentes() {
@@ -54,6 +57,7 @@ public class VentanaPrincipal extends JFrame {
 
         panel.add(tablero, BorderLayout.CENTER);
         panel.add(panelInfo, BorderLayout.NORTH);
+        panel.add(panelConfig, BorderLayout.SOUTH);
 
         add(panel, BorderLayout.CENTER);
     }
@@ -64,9 +68,9 @@ public class VentanaPrincipal extends JFrame {
 
         if(resultado){
             String ganador = juego.getJugadorActual().getNombre();
-            JOptionPane.showMessageDialog(this, "¡Ha ganado "+ganador+"!");
+            JOptionPane.showMessageDialog(null, "¡Ha ganado "+ganador+"!");
         } else if(juego.isEmpate()){
-            JOptionPane.showMessageDialog(this, "¡Ha ocurrido un empate!");
+            JOptionPane.showMessageDialog(null, "¡Ha ocurrido un empate!");
         } else {
 
             juego.avanzarTurno();
@@ -82,5 +86,17 @@ public class VentanaPrincipal extends JFrame {
 
             panel.add(panelInfo, BorderLayout.NORTH);           // Y lo vuelve a añadir con el texto nuevo
         }
+    }
+
+    public void reiniciar() {
+        juego.nuevoJuego();
+
+        setVisible(false);
+
+        inicializar();
+        inicializarComponentes();
+        ubicarComponentes();
+
+        setVisible(true);                           // Ventana visible
     }
 }
