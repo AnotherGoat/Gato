@@ -43,6 +43,8 @@ public class VentanaPrincipal extends JFrame {
         labelJugadores = new JLabel(juego.toString());
         labelJugadores.setHorizontalAlignment(SwingConstants.CENTER);
 
+        var i = 1+2;
+
         labelTurno = new JLabel(juego.getTurno());
         labelTurno.setHorizontalAlignment(SwingConstants.CENTER);
 

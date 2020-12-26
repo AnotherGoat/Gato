@@ -25,29 +25,29 @@ public class Tablero {
     public boolean buscarLineas(EstadoCasilla estado) {
 
         // Estados
-        EstadoCasilla[] e = new EstadoCasilla[9];
+        var e = new EstadoCasilla[9];
 
         for (int i = 0; i < casillas.length; i++) {
             e[i] = casillas[i].getEstado();
         }
 
         for (int i = 0; i < 9; i = i + 3) {                              // Revisa cada fila
-            if (e[i].equals(estado) && e[i].equals(e[i + 1]) && e[i].equals(e[i + 2])) {
+            if (e[i] == estado && e[i] == e[i + 1] && e[i] == e[i + 2]) {
                 return true;
             }
         }
 
         for (int i = 0; i < 3; i = i + 1) {                              // Revisa cada columna
-            if (e[i].equals(estado) && e[i].equals(e[i + 3]) && e[i].equals(e[i + 6])) {
+            if (e[i] == estado && e[i] == e[i + 3] && e[i] == e[i + 6]) {
                 return true;
             }
         }
 
-        if (e[0].equals(estado) && e[0].equals(e[4]) && e[0].equals(e[8])) {        // Revisa cada diagonal
+        if (e[0] == estado && e[0] == e[4] && e[0] == e[8]) {        // Revisa cada diagonal
             return true;
         }
 
-        return e[2].equals(estado) && e[2].equals(e[4]) && e[2].equals(e[6]);
+        return e[2] == estado && e[2] == e[4] && e[2] == e[6];
     }
 
     /* Getters */
