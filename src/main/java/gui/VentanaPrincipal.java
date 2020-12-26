@@ -43,8 +43,6 @@ public class VentanaPrincipal extends JFrame {
         labelJugadores = new JLabel(juego.toString());
         labelJugadores.setHorizontalAlignment(SwingConstants.CENTER);
 
-        var i = 1+2;
-
         labelTurno = new JLabel(juego.getTurno());
         labelTurno.setHorizontalAlignment(SwingConstants.CENTER);
 
@@ -66,10 +64,10 @@ public class VentanaPrincipal extends JFrame {
 
     /* Métodos */
     public void avanzarTurno() {
-        boolean resultado = juego.buscarGanador();                              // Revisa si hay un ganador
+        var resultado = juego.buscarGanador();                              // Revisa si hay un ganador
 
         if (resultado) {
-            String ganador = juego.getJugadorActual().getNombre();
+            var ganador = juego.getJugadorActual().getNombre();
             JOptionPane.showMessageDialog(null, "¡Ha ganado " + ganador + "!");
         } else if (juego.isEmpate()) {
             JOptionPane.showMessageDialog(null, "¡Ha ocurrido un empate!");

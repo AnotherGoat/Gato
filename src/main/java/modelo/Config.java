@@ -23,7 +23,7 @@ public class Config {
 
         var ordenNuevo = new int[orden.length];
 
-        for (int i = 0; i < orden.length; i++) {
+        for (var i = 0; i < orden.length; i++) {
             ordenNuevo[i] = orden[orden.length - 1 - i];
         }
 

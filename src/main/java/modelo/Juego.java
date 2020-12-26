@@ -32,7 +32,7 @@ public class Juego {
     }
 
     public boolean buscarGanador() {
-        boolean resultado = tablero.buscarLineas(getSimboloActual());
+        var resultado = tablero.buscarLineas(getSimboloActual());
 
         if (resultado) {                                         // Registra que ha terminado el juego
             terminado = true;                                   // Y revisa si ocurrió un empate

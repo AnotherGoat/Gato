@@ -16,7 +16,7 @@ public class Tablero {
     public Tablero() {
 
         casillas = new Casilla[9];                          // Inicializa todas las casillas
-        for (int i = 0; i < casillas.length; i++) {         // Para que todas empiecen vacías
+        for (var i = 0; i < casillas.length; i++) {         // Para que todas empiecen vacías
             casillas[i] = new Casilla();
         }
     }
@@ -27,17 +27,17 @@ public class Tablero {
         // Estados
         var e = new EstadoCasilla[9];
 
-        for (int i = 0; i < casillas.length; i++) {
+        for (var i = 0; i < casillas.length; i++) {
             e[i] = casillas[i].getEstado();
         }
 
-        for (int i = 0; i < 9; i = i + 3) {                              // Revisa cada fila
+        for (var i = 0; i < 9; i = i + 3) {                              // Revisa cada fila
             if (e[i] == estado && e[i] == e[i + 1] && e[i] == e[i + 2]) {
                 return true;
             }
         }
 
-        for (int i = 0; i < 3; i = i + 1) {                              // Revisa cada columna
+        for (var i = 0; i < 3; i = i + 1) {                              // Revisa cada columna
             if (e[i] == estado && e[i] == e[i + 3] && e[i] == e[i + 6]) {
                 return true;
             }

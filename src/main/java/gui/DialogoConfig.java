@@ -54,14 +54,14 @@ public class DialogoConfig extends JDialog implements ActionListener {
         panelOpciones = new JPanel(new GridLayout(14, 1));
 
         /* JRadioButton */
-        JRadioButton radio1 = new JRadioButton("Cruz", true);
-        JRadioButton radio2 = new JRadioButton("Círculo", false);
-        JRadioButton radio3 = new JRadioButton("Persona", true);
+        var radio1 = new JRadioButton("Cruz", true);
+        var radio2 = new JRadioButton("Círculo", false);
+        var radio3 = new JRadioButton("Persona", true);
         radio3.setEnabled(false);
-        JRadioButton radio4 = new JRadioButton("IA", false);
+        var radio4 = new JRadioButton("IA", false);
         radio4.setEnabled(false);
-        JRadioButton radio5 = new JRadioButton("Cruz", false);
-        JRadioButton radio6 = new JRadioButton("Círculo", true);
+        var radio5 = new JRadioButton("Cruz", false);
+        var radio6 = new JRadioButton("Círculo", true);
 
         /* Opción 1 */
         labelNombreJ1 = new JLabel("Nombre de jugador 1:");
