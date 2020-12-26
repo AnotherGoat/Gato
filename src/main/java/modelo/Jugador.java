@@ -25,4 +25,12 @@ public class Jugador {
     public EstadoCasilla getSimbolo() {
         return simbolo;
     }
+
+    public String getFigura() {
+        return switch(simbolo){
+            case CRUZ -> "X";
+            case CIRCULO -> "O";
+            case VACIO -> "";
+        };
+    }
 }

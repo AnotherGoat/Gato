@@ -59,7 +59,9 @@ public class SistemaTurnos {
     /* toString */
     @Override
     public String toString() {
-        String nombreActual = orden[posicionActual].getNombre();       // Nombre del jugador actual
-        return "Turno " + numero +": "+nombreActual;
+        String nombreActual = orden[posicionActual].getNombre();        // Nombre del jugador actual
+        String figuraActual = orden[posicionActual].getFigura();        // Figura que usa el jugador actual
+
+        return "Turno " + numero +": "+nombreActual+" ("+figuraActual+")";
     }
 }

@@ -81,7 +81,12 @@ public class Juego {
     /* toString */
     @Override
     public String toString() {
-        return jugadores[0].getNombre()+" vs. "+jugadores[1].getNombre();
+        var nombreJ1 = jugadores[0].getNombre();
+        var figuraJ1 = jugadores[0].getFigura();
+        var nombreJ2 = jugadores[1].getNombre();
+        var figuraJ2 = jugadores[1].getFigura();
+
+        return nombreJ1+" ("+figuraJ1+") vs. "+nombreJ2+" ("+figuraJ2+")";
     }
 
 }
