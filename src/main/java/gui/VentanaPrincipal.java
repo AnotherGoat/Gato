@@ -78,16 +78,10 @@ public class VentanaPrincipal extends JFrame {
 
             juego.avanzarTurno();
 
-            panel.remove(panelInfo);                            // Quita el panel con la información
+            labelTurno.setText(juego.getTurno());           // Actualiza el texto del turno
 
-            labelTurno = new JLabel(juego.getTurno());          // Para actualizar el texto que tiene
-            labelTurno.setHorizontalAlignment(SwingConstants.CENTER);
-
-            panelInfo = new JPanel(new BorderLayout());
-            panelInfo.add(labelJugadores, BorderLayout.NORTH);
-            panelInfo.add(labelTurno, BorderLayout.SOUTH);
-
-            panel.add(panelInfo, BorderLayout.NORTH);           // Y lo vuelve a añadir con el texto nuevo
+            revalidate();                                   // Vuelve a pintar la ventana
+            repaint();
         }
     }
 }

@@ -47,6 +47,9 @@ public class BotonCasilla extends JButton implements ActionListener {
                 setText("O");
             }
         }
+
+        revalidate();                           // Por precaución
+        repaint();
     }
 
     /* ActionListener */
