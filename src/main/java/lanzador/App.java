@@ -1,6 +1,7 @@
 package lanzador;
 
 import gui.VentanaPrincipal;
+import modelo.Config;
 import modelo.Juego;
 
 /**
@@ -9,11 +10,13 @@ import modelo.Juego;
 public class App {
 
     /* Variables globales */
+    public static Config config;
     public static Juego juego;
     public static VentanaPrincipal vp;
 
     public static void main(String[] args) {
-        juego = new Juego();
+        config = new Config();
+        juego = new Juego(config);
         vp = new VentanaPrincipal();
     }
 

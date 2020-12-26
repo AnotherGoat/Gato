@@ -9,13 +9,12 @@ public class SistemaTurnos {
     private int posicionActual;
 
     /* Constructores */
-    public SistemaTurnos(Juego juego) {
+    public SistemaTurnos(Juego juego, int[] orden) {
         this.juego = juego;
         numero = 1;
         posicionActual = 0;
 
-        orden = new Jugador[2];
-        orden = juego.getJugadores();
+        this.orden = ordenarJugadores(juego.getJugadores(), orden);
     }
 
     /* Métodos */
@@ -24,6 +23,19 @@ public class SistemaTurnos {
             numero++;
             posicionActual = (posicionActual+1) % orden.length;
         }
+    }
+
+    public Jugador[] ordenarJugadores(Jugador[] jugadores, int[] orden) {
+
+        var ordenNuevo = new Jugador[jugadores.length];
+
+        for (int i=0; i<jugadores.length; i++) {
+            for (int o : orden) {
+                ordenNuevo[i] = jugadores[o];
+            }
+        }
+
+        return ordenNuevo;
     }
 
     /* Getters */

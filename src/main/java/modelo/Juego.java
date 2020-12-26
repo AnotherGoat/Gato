@@ -1,5 +1,7 @@
 package modelo;
 
+import static lanzador.App.config;
+
 public class Juego {
 
     /* Atributos */
@@ -8,17 +10,20 @@ public class Juego {
     private SistemaTurnos sistemaTurnos;
     private boolean terminado;
     private boolean empate;
-    private Jugador ganador;
 
     /* Constructor */
-    public Juego() {
+    public Juego(Config config) {
         tablero = new Tablero();
         jugadores = new Jugador[2];
 
-        jugadores[0] = new Jugador("Jugador 1", EstadoCasilla.CRUZ, TipoJugador.PERSONA);
-        jugadores[1] = new Jugador("Jugador 2", EstadoCasilla.CIRCULO, TipoJugador.PERSONA);
+        var nombres= config.getNombres();
+        var estados = config.getSimbolos();
+        var tipos = config.getTipos();
 
-        sistemaTurnos = new SistemaTurnos(this);
+        jugadores[0] = new Jugador(nombres[0], estados[0], tipos[0]);
+        jugadores[1] = new Jugador(nombres[1], estados[1], tipos[1]);
+
+        sistemaTurnos = new SistemaTurnos(this, config.getOrden());
 
         terminado = false;
     }
@@ -42,6 +47,22 @@ public class Juego {
         }
 
         return resultado;
+    }
+
+    public void nuevoJuego() {
+        tablero = new Tablero();
+        jugadores = new Jugador[2];
+
+        var nombres= config.getNombres();
+        var estados = config.getSimbolos();
+        var tipos = config.getTipos();
+
+        jugadores[0] = new Jugador(nombres[0], estados[0], tipos[0]);
+        jugadores[1] = new Jugador(nombres[1], estados[1], tipos[1]);
+
+        sistemaTurnos = new SistemaTurnos(this, config.getOrden());
+
+        terminado = false;
     }
 
     /* Getters */
