@@ -27,6 +27,8 @@ public class PanelTablero extends JPanel {
     /* Métodos de inicialización */
     private void inicializar() {
         setLayout(new GridLayout(3, 3));
+        setBorder(BorderFactory.createLineBorder(Color.BLACK, 3));
+        setBackground(Color.BLACK);
 
         for (var c : casillas) {
             add(c);
