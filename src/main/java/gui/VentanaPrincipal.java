@@ -7,50 +7,53 @@ import static lanzador.App.juego;
 
 public class VentanaPrincipal extends JFrame {
 
-    /* Atributos */
+    /* Paneles */
     private JPanel panel;
     private PanelTablero tablero;
     private JPanel panelInfo;
+    private PanelConfig panelConfig;
+
+    /* Labels */
     private JLabel labelJugadores;
     private JLabel labelTurno;
-    private PanelConfig panelConfig;
 
     /* Constructores */
     public VentanaPrincipal() {
-        inicializar();
-        inicializarComponentes();
+        configurarVentana();
+        inicializarPaneles();
+        inicializarLabels();
         ubicarComponentes();
 
         setVisible(true);                           // Ventana visible
     }
 
     /* Métodos de inicialización */
-    private void inicializar() {
+    private void configurarVentana() {
         setTitle("Gato");                           // Título: Gato
         setSize(600, 660);              // Tamaño inicial: 600x660
         setLocationRelativeTo(null);                // Inicia centrada
         setDefaultCloseOperation(EXIT_ON_CLOSE);    // Al cerrar la ventana, se cierra el programa
     }
 
-    private void inicializarComponentes() {
-
+    private void inicializarPaneles() {
         panel = new JPanel(new BorderLayout());             // Para que el panel principal llene la ventana
 
         tablero = new PanelTablero(juego.getTablero());
 
         panelInfo = new JPanel(new BorderLayout());
 
+        panelConfig = new PanelConfig();
+    }
+
+    private void inicializarLabels() {
         labelJugadores = new JLabel(juego.toString());
         labelJugadores.setHorizontalAlignment(SwingConstants.CENTER);
 
         labelTurno = new JLabel(juego.getTurno());
         labelTurno.setHorizontalAlignment(SwingConstants.CENTER);
-
-        panelConfig = new PanelConfig();
     }
 
     private void ubicarComponentes() {
-
         panelInfo.add(labelJugadores, BorderLayout.NORTH);
         panelInfo.add(labelTurno, BorderLayout.SOUTH);
 

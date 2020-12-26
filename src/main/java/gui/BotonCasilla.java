@@ -20,18 +20,19 @@ public class BotonCasilla extends JButton implements ActionListener {
     public BotonCasilla(Casilla casilla) {
         this.casilla = casilla;
 
-        setBorder(BorderFactory.createLineBorder(Color.BLACK, 3));
-        setFont(new Font("Arial", Font.BOLD, 200));
-
-        setHorizontalAlignment(CENTER);
-        setVerticalAlignment(CENTER);
-
+        configurarCasilla();
         actualizarAspecto();
-
-        addActionListener(this);
+        agregarListeners();
     }
 
     /* Métodos */
+    public void configurarCasilla() {
+        setBorder(BorderFactory.createLineBorder(Color.BLACK, 3));
+        setFont(new Font("Arial", Font.BOLD, 200));
+        setHorizontalAlignment(CENTER);
+        setVerticalAlignment(CENTER);
+    }
+
     public void actualizarAspecto() {
         switch (casilla.getEstado()) {          // Dependiendo del estado, se elige el diseño de la casilla
             case VACIO -> {
@@ -47,6 +48,10 @@ public class BotonCasilla extends JButton implements ActionListener {
                 setText("O");
             }
         }
+    }
+
+    public void agregarListeners() {
+        addActionListener(this);
     }
 
     /* ActionListener */
