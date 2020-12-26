@@ -49,6 +49,7 @@ public class BotonCasilla extends JButton implements ActionListener {
         }
     }
 
+    /* ActionListener */
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this) {

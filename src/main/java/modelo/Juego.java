@@ -49,22 +49,6 @@ public class Juego {
         return resultado;
     }
 
-    public void nuevoJuego() {
-        tablero = new Tablero();
-        jugadores = new Jugador[2];
-
-        var nombres= config.getNombres();
-        var estados = config.getSimbolos();
-        var tipos = config.getTipos();
-
-        jugadores[0] = new Jugador(nombres[0], estados[0], tipos[0]);
-        jugadores[1] = new Jugador(nombres[1], estados[1], tipos[1]);
-
-        sistemaTurnos = new SistemaTurnos(this, config.getOrden());
-
-        terminado = false;
-    }
-
     /* Getters */
     public boolean isTerminado() {
         return terminado;

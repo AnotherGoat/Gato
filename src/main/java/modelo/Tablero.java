@@ -11,7 +11,6 @@ public class Tablero {
 
     /* Atributos */
     private Casilla[] casillas;
-    private EstadoCasilla[] e;          // Estados
 
     /* Constructores */
     public Tablero() {
@@ -25,7 +24,9 @@ public class Tablero {
     /* Métodos */
     public boolean buscarLineas(EstadoCasilla estado) {
 
-        e = new EstadoCasilla[9];
+        // Estados
+        EstadoCasilla[] e = new EstadoCasilla[9];
+
         for (int i=0; i<casillas.length; i++) {
             e[i] = casillas[i].getEstado();
         }

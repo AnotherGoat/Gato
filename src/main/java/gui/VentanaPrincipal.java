@@ -1,19 +1,22 @@
 package gui;
 
+import modelo.Juego;
+
 import javax.swing.*;
 import java.awt.*;
 
+import static lanzador.App.config;
 import static lanzador.App.juego;
 
 public class VentanaPrincipal extends JFrame {
 
     /* Atributos */
-    JPanel panel;
-    PanelTablero tablero;
-    JPanel panelInfo;
-    JLabel labelJugadores;
-    JLabel labelTurno;
-    PanelConfig panelConfig;
+    private JPanel panel;
+    private PanelTablero tablero;
+    private JPanel panelInfo;
+    private JLabel labelJugadores;
+    private JLabel labelTurno;
+    private PanelConfig panelConfig;
 
     /* Constructores */
     public VentanaPrincipal() {
@@ -62,6 +65,7 @@ public class VentanaPrincipal extends JFrame {
         add(panel, BorderLayout.CENTER);
     }
 
+
     /* Métodos */
     public void avanzarTurno() {
         boolean resultado = juego.buscarGanador();                              // Revisa si hay un ganador
@@ -86,17 +90,5 @@ public class VentanaPrincipal extends JFrame {
 
             panel.add(panelInfo, BorderLayout.NORTH);           // Y lo vuelve a añadir con el texto nuevo
         }
-    }
-
-    public void reiniciar() {
-        juego.nuevoJuego();
-
-        setVisible(false);
-
-        inicializar();
-        inicializarComponentes();
-        ubicarComponentes();
-
-        setVisible(true);                           // Ventana visible
     }
 }
