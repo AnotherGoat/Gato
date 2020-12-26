@@ -1,13 +1,8 @@
 package gui;
 
-import modelo.Juego;
-import modelo.SistemaTurnos;
-
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 
-import static javax.swing.SwingConstants.CENTER;
 import static lanzador.App.juego;
 
 public class VentanaPrincipal extends JFrame {
@@ -31,7 +26,7 @@ public class VentanaPrincipal extends JFrame {
     /* Métodos de inicialización */
     private void inicializar() {
         setTitle("Gato");                           // Título: Gato
-        setSize(600,600);               // Tamaño inicial: 600x600
+        setSize(600,600);                           // Tamaño inicial: 600x600
         setLocationRelativeTo(null);                // Inicia centrada
         setLayout(new BorderLayout());              // Para que el panel principal llene la ventana
         setDefaultCloseOperation(EXIT_ON_CLOSE);    // Al cerrar la ventana, se cierra el programa
@@ -46,10 +41,10 @@ public class VentanaPrincipal extends JFrame {
         panelInfo = new JPanel(new BorderLayout());
 
         labelJugadores = new JLabel(juego.toString());
-        labelJugadores.setHorizontalAlignment(CENTER);
+        labelJugadores.setHorizontalAlignment(SwingConstants.CENTER);
 
         labelTurno = new JLabel(juego.getTurno());
-        labelTurno.setHorizontalAlignment(CENTER);
+        labelTurno.setHorizontalAlignment(SwingConstants.CENTER);
     }
 
     private void ubicarComponentes() {
@@ -79,7 +74,7 @@ public class VentanaPrincipal extends JFrame {
             panel.remove(panelInfo);                            // Quita el panel con la información
 
             labelTurno = new JLabel(juego.getTurno());          // Para actualizar el texto que tiene
-            labelTurno.setHorizontalAlignment(CENTER);
+            labelTurno.setHorizontalAlignment(SwingConstants.CENTER);
 
             panelInfo = new JPanel(new BorderLayout());
             panelInfo.add(labelJugadores, BorderLayout.NORTH);

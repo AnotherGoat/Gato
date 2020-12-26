@@ -1,12 +1,9 @@
 package gui;
 
-import modelo.Casilla;
 import modelo.Tablero;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class PanelTablero extends JPanel {
 
