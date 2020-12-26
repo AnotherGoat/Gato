@@ -3,9 +3,9 @@ package modelo;
 public class Juego {
 
     /* Atributos */
-    private Tablero tablero;
-    private Jugador[] jugadores;
-    private SistemaTurnos sistemaTurnos;
+    private final Tablero tablero;
+    private final Jugador[] jugadores;
+    private final SistemaTurnos sistemaTurnos;
     private boolean terminado;
     private boolean empate;
 
@@ -14,7 +14,7 @@ public class Juego {
         tablero = new Tablero();
         jugadores = new Jugador[2];
 
-        var nombres= config.getNombres();
+        var nombres = config.getNombres();
         var estados = config.getSimbolos();
         var tipos = config.getTipos();
 
@@ -34,11 +34,11 @@ public class Juego {
     public boolean buscarGanador() {
         boolean resultado = tablero.buscarLineas(getSimboloActual());
 
-        if(resultado) {                                         // Registra que ha terminado el juego
+        if (resultado) {                                         // Registra que ha terminado el juego
             terminado = true;                                   // Y revisa si ocurrió un empate
             empate = false;
         } else {
-            if (sistemaTurnos.getNumero() == 9){
+            if (sistemaTurnos.getNumero() == 9) {
                 terminado = true;
                 empate = true;
             }
@@ -84,7 +84,7 @@ public class Juego {
         var nombreJ2 = jugadores[1].getNombre();
         var figuraJ2 = jugadores[1].getFigura();
 
-        return nombreJ1+" ("+figuraJ1+") vs. "+nombreJ2+" ("+figuraJ2+")";
+        return nombreJ1 + " (" + figuraJ1 + ") vs. " + nombreJ2 + " (" + figuraJ2 + ")";
     }
 
 }

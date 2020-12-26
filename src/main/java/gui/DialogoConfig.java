@@ -44,7 +44,7 @@ public class DialogoConfig extends JDialog implements ActionListener {
     /* Métodos de inicialización */
     private void inicializar() {
         setTitle("Configuración de Gato");              // Título: Configuración de Gato
-        setSize(500,500);                   // Tamaño inicial: 500x500
+        setSize(500, 500);                   // Tamaño inicial: 500x500
         setLocationRelativeTo(null);                    // Inicia centrado
     }
 
@@ -53,7 +53,7 @@ public class DialogoConfig extends JDialog implements ActionListener {
         panel = new JPanel(new BorderLayout());             // Para que el panel principal llene la ventana
 
         /* Panel con opciones */
-        panelOpciones = new JPanel(new GridLayout(14,1));
+        panelOpciones = new JPanel(new GridLayout(14, 1));
 
         /* JRadioButton */
         JRadioButton radio1 = new JRadioButton("Cruz", true);

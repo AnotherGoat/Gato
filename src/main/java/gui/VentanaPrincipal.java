@@ -27,7 +27,7 @@ public class VentanaPrincipal extends JFrame {
     /* Métodos de inicialización */
     private void inicializar() {
         setTitle("Gato");                           // Título: Gato
-        setSize(600,600);               // Tamaño inicial: 600x600
+        setSize(600, 600);               // Tamaño inicial: 600x600
         setLocationRelativeTo(null);                // Inicia centrada
         setDefaultCloseOperation(EXIT_ON_CLOSE);    // Al cerrar la ventana, se cierra el programa
     }
@@ -66,10 +66,10 @@ public class VentanaPrincipal extends JFrame {
     public void avanzarTurno() {
         boolean resultado = juego.buscarGanador();                              // Revisa si hay un ganador
 
-        if(resultado){
+        if (resultado) {
             String ganador = juego.getJugadorActual().getNombre();
-            JOptionPane.showMessageDialog(null, "¡Ha ganado "+ganador+"!");
-        } else if(juego.isEmpate()){
+            JOptionPane.showMessageDialog(null, "¡Ha ganado " + ganador + "!");
+        } else if (juego.isEmpate()) {
             JOptionPane.showMessageDialog(null, "¡Ha ocurrido un empate!");
         } else {
 

@@ -3,7 +3,7 @@ package modelo;
 public class SistemaTurnos {
 
     /* Atributos */
-    private Juego juego;
+    private final Juego juego;
     private int numero;
     private Jugador[] orden;
     private int posicionActual;
@@ -21,7 +21,7 @@ public class SistemaTurnos {
     public void avanzar() {
         if (!juego.isTerminado()) {             // Si el juego todavía no termina
             numero++;
-            posicionActual = (posicionActual+1) % orden.length;
+            posicionActual = (posicionActual + 1) % orden.length;
         }
     }
 
@@ -29,7 +29,7 @@ public class SistemaTurnos {
 
         var ordenNuevo = new Jugador[jugadores.length];
 
-        for (int i=0; i<jugadores.length; i++) {
+        for (int i = 0; i < jugadores.length; i++) {
             ordenNuevo[i] = jugadores[orden[i]];
         }
 
@@ -40,8 +40,8 @@ public class SistemaTurnos {
 
         var ordenNuevo = new Jugador[orden.length];
 
-        for (int i=0; i<orden.length; i++) {
-            ordenNuevo[i] = orden[orden.length-1-i];
+        for (int i = 0; i < orden.length; i++) {
+            ordenNuevo[i] = orden[orden.length - 1 - i];
         }
 
         orden = ordenNuevo;
@@ -62,6 +62,6 @@ public class SistemaTurnos {
         String nombreActual = orden[posicionActual].getNombre();        // Nombre del jugador actual
         String figuraActual = orden[posicionActual].getFigura();        // Figura que usa el jugador actual
 
-        return "Turno " + numero +": "+nombreActual+" ("+figuraActual+")";
+        return "Turno " + numero + ": " + nombreActual + " (" + figuraActual + ")";
     }
 }

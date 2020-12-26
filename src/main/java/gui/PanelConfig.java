@@ -39,7 +39,7 @@ public class PanelConfig extends JPanel {
                 if (e.getSource() == botonNuevoJuego) {
                     vp.dispose();
 
-                    if(config.isAlternar()) {
+                    if (config.isAlternar()) {
                         config.invertirOrden();
                     }
 

@@ -26,9 +26,9 @@ public class PanelTablero extends JPanel {
 
     /* Métodos de inicialización */
     private void inicializar() {
-        setLayout(new GridLayout(3,3));
+        setLayout(new GridLayout(3, 3));
 
-        for(BotonCasilla c : casillas) {
+        for (BotonCasilla c : casillas) {
             add(c);
         }
     }

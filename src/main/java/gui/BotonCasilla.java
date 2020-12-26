@@ -14,13 +14,13 @@ import static lanzador.App.vp;
 public class BotonCasilla extends JButton implements ActionListener {
 
     /* Atributos */
-    private Casilla casilla;
+    private final Casilla casilla;
 
     /* Constructores */
     public BotonCasilla(Casilla casilla) {
         this.casilla = casilla;
 
-        setBorder(BorderFactory.createLineBorder(Color.BLACK,3));
+        setBorder(BorderFactory.createLineBorder(Color.BLACK, 3));
         setFont(new Font("Arial", Font.BOLD, 200));
 
         setHorizontalAlignment(CENTER);
@@ -32,7 +32,7 @@ public class BotonCasilla extends JButton implements ActionListener {
     }
 
     /* Métodos */
-    public void actualizarAspecto(){
+    public void actualizarAspecto() {
         switch (casilla.getEstado()) {          // Dependiendo del estado, se elige el diseño de la casilla
             case VACIO -> {
                 setForeground(Color.WHITE);
@@ -54,7 +54,7 @@ public class BotonCasilla extends JButton implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this) {
 
-            if(casilla.getEstado() == EstadoCasilla.VACIO && !juego.isTerminado()) {
+            if (casilla.getEstado() == EstadoCasilla.VACIO && !juego.isTerminado()) {
                 casilla.setEstado(juego.getSimboloActual());
                 actualizarAspecto();
                 vp.avanzarTurno();

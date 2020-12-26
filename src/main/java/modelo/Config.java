@@ -3,11 +3,11 @@ package modelo;
 public class Config {
 
     /* Atributos */
-    private String[] nombres;                               // Nombres de los jugadores
-    private EstadoCasilla[] simbolos;                       // Símbolo que usa cada jugador
+    private final String[] nombres;                               // Nombres de los jugadores
+    private final EstadoCasilla[] simbolos;                       // Símbolo que usa cada jugador
     private int[] orden;                                    // Orden en el que juegan los jugadores
-    private TipoJugador[] tipos;
-    private boolean alternar;                               // Invertir el orden al final de cada turno
+    private final TipoJugador[] tipos;
+    private final boolean alternar;                               // Invertir el orden al final de cada turno
 
     /* Constructores */
     public Config() {
@@ -31,8 +31,8 @@ public class Config {
 
         var ordenNuevo = new int[orden.length];
 
-        for (int i=0; i<orden.length; i++) {
-            ordenNuevo[i] = orden[orden.length-1-i];
+        for (int i = 0; i < orden.length; i++) {
+            ordenNuevo[i] = orden[orden.length - 1 - i];
         }
 
         orden = ordenNuevo;

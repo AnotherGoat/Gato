@@ -6,9 +6,9 @@ package modelo;
 public class Jugador {
 
     /* Atributos */
-    private String nombre;
-    private EstadoCasilla simbolo;
-    private TipoJugador tipo;
+    private final String nombre;
+    private final EstadoCasilla simbolo;
+    private final TipoJugador tipo;
 
     /* Constructores */
     public Jugador(String nombre, EstadoCasilla simbolo, TipoJugador tipo) {
@@ -27,7 +27,7 @@ public class Jugador {
     }
 
     public String getFigura() {
-        return switch(simbolo){
+        return switch (simbolo) {
             case CRUZ -> "X";
             case CIRCULO -> "O";
             case VACIO -> "";
