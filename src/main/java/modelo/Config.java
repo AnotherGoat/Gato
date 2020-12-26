@@ -1,5 +1,8 @@
 package modelo;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 public class Config {
 
     /* Atributos */
@@ -24,6 +27,18 @@ public class Config {
         this.orden = orden;
         tipos = new TipoJugador[]{TipoJugador.PERSONA, TipoJugador.PERSONA};
         alternar = true;
+    }
+
+    /* Métodos */
+    public void invertirOrden() {
+
+        var ordenNuevo = new int[orden.length];
+
+        for (int i=0; i<orden.length; i++) {
+            ordenNuevo[i] = orden[orden.length-1-i];
+        }
+
+        orden = ordenNuevo;
     }
 
     /* Getters */

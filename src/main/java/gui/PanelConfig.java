@@ -40,6 +40,11 @@ public class PanelConfig extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 if (e.getSource() == botonNuevoJuego) {
                     vp.dispose();
+
+                    if(config.isAlternar()) {
+                        config.invertirOrden();
+                    }
+
                     juego = new Juego(config);
                     vp = new VentanaPrincipal();
                 }
