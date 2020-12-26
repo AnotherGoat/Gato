@@ -124,6 +124,6 @@ public class DialogoConfig extends JDialog implements ActionListener {
     /* ActionListener */
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        // TODO: Hacer que se pueda cambiar la configuración usando el menú
     }
 }
