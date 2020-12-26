@@ -3,8 +3,6 @@ package gui;
 import modelo.Juego;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import static lanzador.App.*;
 
@@ -33,37 +31,28 @@ public class PanelConfig extends JPanel {
     }
 
     private void iniciarListeners() {
-        botonNuevoJuego.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (e.getSource() == botonNuevoJuego) {
-                    vp.dispose();
+        botonNuevoJuego.addActionListener(e -> {
+            if (e.getSource() == botonNuevoJuego) {
+                vp.dispose();
 
-                    if (config.isAlternar()) {
-                        config.invertirOrden();
-                    }
-
-                    juego = new Juego(config);
-                    vp = new VentanaPrincipal();
+                if (config.isAlternar()) {
+                    config.invertirOrden();
                 }
+
+                juego = new Juego(config);
+                vp = new VentanaPrincipal();
             }
         });
 
-        botonConfig.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (e.getSource() == botonConfig) {
-                    new DialogoConfig();
-                }
+        botonConfig.addActionListener(e -> {
+            if (e.getSource() == botonConfig) {
+                new DialogoConfig();
             }
         });
 
-        botonSalir.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (e.getSource() == botonSalir) {
-                    vp.dispose();
-                }
+        botonSalir.addActionListener(e -> {
+            if (e.getSource() == botonSalir) {
+                vp.dispose();
             }
         });
     }

@@ -18,14 +18,6 @@ public class Config {
         alternar = true;
     }
 
-    public Config(String[] nombres, EstadoCasilla[] simbolos, int[] orden) {
-        this.nombres = nombres;
-        this.simbolos = simbolos;
-        this.orden = orden;
-        tipos = new TipoJugador[]{TipoJugador.PERSONA, TipoJugador.PERSONA};
-        alternar = true;
-    }
-
     /* Métodos */
     public void invertirOrden() {
 

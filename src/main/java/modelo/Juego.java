@@ -48,8 +48,8 @@ public class Juego {
     }
 
     /* Getters */
-    public boolean isTerminado() {
-        return terminado;
+    public boolean isSinTerminar() {
+        return !terminado;
     }
 
     public Tablero getTablero() {

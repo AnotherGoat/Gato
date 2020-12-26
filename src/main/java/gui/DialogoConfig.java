@@ -18,14 +18,12 @@ public class DialogoConfig extends JDialog implements ActionListener {
 
     private JLabel labelSimboloJ1;
     private JPanel panelSimboloJ1;
-    private ButtonGroup grupoSimboloJ1;
 
     private JLabel labelNombreJ2;
     private JTextField campoNombreJ2;
 
     private JLabel labelSimboloJ2;
     private JPanel panelSimboloJ2;
-    private ButtonGroup grupoSimboloJ2;
 
     private JPanel panelNota;
     private JLabel labelNota;
@@ -77,7 +75,7 @@ public class DialogoConfig extends JDialog implements ActionListener {
         panelSimboloJ1.add(radio1);
         panelSimboloJ1.add(radio2);
 
-        grupoSimboloJ1 = new ButtonGroup();
+        var grupoSimboloJ1 = new ButtonGroup();
         grupoSimboloJ1.add(radio1);
         grupoSimboloJ1.add(radio2);
 
@@ -93,7 +91,7 @@ public class DialogoConfig extends JDialog implements ActionListener {
         panelSimboloJ2.add(radio5);
         panelSimboloJ2.add(radio6);
 
-        grupoSimboloJ2 = new ButtonGroup();
+        var grupoSimboloJ2 = new ButtonGroup();
         grupoSimboloJ2.add(radio5);
         grupoSimboloJ2.add(radio6);
 

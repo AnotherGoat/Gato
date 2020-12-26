@@ -54,7 +54,7 @@ public class BotonCasilla extends JButton implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this) {
 
-            if (casilla.getEstado() == EstadoCasilla.VACIO && !juego.isTerminado()) {
+            if (casilla.getEstado() == EstadoCasilla.VACIO && juego.isSinTerminar()) {
                 casilla.setEstado(juego.getSimboloActual());
                 actualizarAspecto();
                 vp.avanzarTurno();
