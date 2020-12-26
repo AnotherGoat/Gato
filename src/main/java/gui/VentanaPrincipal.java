@@ -30,15 +30,14 @@ public class VentanaPrincipal extends JFrame {
     /* Métodos de inicialización */
     private void inicializar() {
         setTitle("Gato");                           // Título: Gato
-        setSize(600,600);                           // Tamaño inicial: 600x600
+        setSize(600,600);               // Tamaño inicial: 600x600
         setLocationRelativeTo(null);                // Inicia centrada
-        setLayout(new BorderLayout());              // Para que el panel principal llene la ventana
         setDefaultCloseOperation(EXIT_ON_CLOSE);    // Al cerrar la ventana, se cierra el programa
     }
 
     private void inicializarComponentes() {
 
-        panel = new JPanel(new BorderLayout());
+        panel = new JPanel(new BorderLayout());             // Para que el panel principal llene la ventana
 
         tablero = new PanelTablero(juego.getTablero());
 
@@ -62,7 +61,7 @@ public class VentanaPrincipal extends JFrame {
         panel.add(panelInfo, BorderLayout.NORTH);
         panel.add(panelConfig, BorderLayout.SOUTH);
 
-        add(panel, BorderLayout.CENTER);
+        add(panel);
     }
 
 
