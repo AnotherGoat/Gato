@@ -6,6 +6,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+import static javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER;
+import static javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED;
 import static lanzador.App.vp;
 
 public class DialogoConfig extends JDialog implements ActionListener {
@@ -41,6 +43,9 @@ public class DialogoConfig extends JDialog implements ActionListener {
     private ButtonGroup grupoOpcion3;
     private ButtonGroup grupoOpcion4;
 
+    /* Scrolls */
+    private JScrollPane scroll;
+
     /* Constructores */
     public DialogoConfig() {
         super(vp, ModalityType.APPLICATION_MODAL);
@@ -51,6 +56,7 @@ public class DialogoConfig extends JDialog implements ActionListener {
         inicializarCampos();
         inicializarRadios();
         inicializarGrupos();
+        inicializarScrolls();
         ubicarComponentes();
 
         setVisible(true);                               // Diálogo visible
@@ -59,14 +65,14 @@ public class DialogoConfig extends JDialog implements ActionListener {
     /* Métodos de inicialización */
     private void configurarDialogo() {
         setTitle("Configuración de Gato");              // Título: Configuración de Gato
-        setSize(500, 500);                   // Tamaño inicial: 500x500
+        setSize(500, 500);                  // Tamaño inicial: 500x500
         setLocationRelativeTo(null);                    // Inicia centrado
     }
 
     private void inicializarPaneles() {
         panel = new JPanel(new BorderLayout());             // Para que el panel principal llene la ventana
 
-        panelOpciones = new JPanel(new GridLayout(14, 2));
+        panelOpciones = new JPanel(new GridLayout(0, 1));
 
         panelOpcion1 = new JPanel();
         panelOpcion2 = new JPanel();
@@ -101,7 +107,7 @@ public class DialogoConfig extends JDialog implements ActionListener {
     private void inicializarRadios() {
         radios = new ArrayList<>();
 
-        /* Opción 1 */
+        /* Opción 1 */                                                          // posición
         radios.add(new JRadioButton("Cruz", true));                 // 0
         radios.add(new JRadioButton("Círculo", false));             // 1
 
@@ -138,6 +144,13 @@ public class DialogoConfig extends JDialog implements ActionListener {
         grupoOpcion4.add(radios.get(7));
     }
 
+    private void inicializarScrolls() {
+        scroll = new JScrollPane(panelOpciones);
+        scroll.setHorizontalScrollBarPolicy(HORIZONTAL_SCROLLBAR_NEVER);
+        scroll.setVerticalScrollBarPolicy(VERTICAL_SCROLLBAR_AS_NEEDED);
+        scroll.getVerticalScrollBar().setUnitIncrement(8);
+    }
+
     private void ubicarComponentes() {
         panelOpcion1.add(radios.get(0));
         panelOpcion1.add(radios.get(1));
@@ -171,7 +184,7 @@ public class DialogoConfig extends JDialog implements ActionListener {
 
         panelNota.add(labelNota);
 
-        panel.add(panelOpciones, BorderLayout.CENTER);
+        panel.add(scroll, BorderLayout.CENTER);
         panel.add(panelNota, BorderLayout.SOUTH);
 
         add(panel);

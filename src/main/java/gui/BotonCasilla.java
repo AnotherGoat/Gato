@@ -8,6 +8,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import static java.awt.Color.BLACK;
 import static lanzador.App.juego;
 import static lanzador.App.vp;
 
@@ -27,7 +28,7 @@ public class BotonCasilla extends JButton implements ActionListener {
 
     /* Métodos */
     public void configurarCasilla() {
-        setBorder(BorderFactory.createLineBorder(Color.BLACK, 3));
+        setBorder(BorderFactory.createLineBorder(BLACK, 3));
         setFont(new Font("Arial", Font.BOLD, 200));
         setHorizontalAlignment(CENTER);
         setVerticalAlignment(CENTER);

@@ -5,10 +5,12 @@ import modelo.Tablero;
 import javax.swing.*;
 import java.awt.*;
 
+import static java.awt.Color.BLACK;
+
 public class PanelTablero extends JPanel {
 
     /* Atributos */
-    private Tablero tablero;
+    private final Tablero tablero;
 
     /* Botones */
     private BotonCasilla[] casillas;
@@ -25,8 +27,8 @@ public class PanelTablero extends JPanel {
     /* Métodos de inicialización */
     private void configurarTablero() {
         setLayout(new GridLayout(3, 3));
-        setBorder(BorderFactory.createLineBorder(Color.BLACK, 3));
-        setBackground(Color.BLACK);
+        setBorder(BorderFactory.createLineBorder(BLACK, 3));
+        setBackground(BLACK);
     }
 
     private void inicializarCasillas() {
