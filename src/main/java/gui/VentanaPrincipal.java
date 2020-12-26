@@ -27,7 +27,7 @@ public class VentanaPrincipal extends JFrame {
     /* Métodos de inicialización */
     private void inicializar() {
         setTitle("Gato");                           // Título: Gato
-        setSize(600, 600);               // Tamaño inicial: 600x600
+        setSize(600, 660);              // Tamaño inicial: 600x660
         setLocationRelativeTo(null);                // Inicia centrada
         setDefaultCloseOperation(EXIT_ON_CLOSE);    // Al cerrar la ventana, se cierra el programa
     }
@@ -64,7 +64,7 @@ public class VentanaPrincipal extends JFrame {
 
     /* Métodos */
     public void avanzarTurno() {
-        var resultado = juego.buscarGanador();                              // Revisa si hay un ganador
+        var resultado = juego.buscarGanador();      // Revisa si hay un ganador
 
         if (resultado) {
             var ganador = juego.getJugadorActual().getNombre();
